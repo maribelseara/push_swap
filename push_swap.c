@@ -1,6 +1,4 @@
-#include <unistd.h>
-#include <stdlib.h>
-#include <limits.h>
+#include "push_swap.h"
 
 static int check_array(int *array)
 {
@@ -28,9 +26,7 @@ static int *create_stackb(int  *array)
     int *b;
     int len;
 
-    len = 0;
-    while(array[len] != NULL)
-        len++;
+    len = array_len(array);
     b = malloc(sizeof(int) * len + 1);
     if (!b)
         return(NULL);

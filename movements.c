@@ -1,3 +1,5 @@
+#include "push_swap.h"
+
 void    swap(int *array)
 {
     int tmp;
@@ -10,6 +12,7 @@ void    swap(int *array)
 void    push(int *stackorig, int *stackdest)
 {
     int tmp;
+    int len;
     int i;
 
     i=0;
@@ -21,12 +24,11 @@ void    push(int *stackorig, int *stackdest)
         stackorig[i]=stackorig[i+1];
         i++;
     }
-    while(stackdest[i] != NULL)
-        i++;
-    while(i > 0)
+    len = array_len(stackdest);
+    while(len > 0)
     {
-        stackdest[i] = stackdest[i - 1];
-        i--;
+        stackdest[len] = stackdest[len - 1];
+        len--;
     }
     stackdest[0]=tmp;
 }
@@ -51,9 +53,7 @@ void    reverse_rotate(int  *array)
     int tmp;
     int i;
 
-    i=0;
-    while (array[i] != NULL)
-        i++;
+    i = array_len(array);
     tmp = array [i - 1];
     i = 1;
     while (array[i] != NULL)
