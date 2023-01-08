@@ -1,30 +1,34 @@
 #include "push_swap.h"
 
-int array_len(int *array)
-{
-    int len;
-    len = 0;
-    while (array[len] != NULL)
-        len++;
-    return(len);
-}
-
-int *get_sorted(int *array)
+int *get_sorted(int *array, int len)
 {
     int *sorted;
-    int len;
+    int i;
+    int tmp;
 
-    len = array_len(array);
+    i = 0;
     sorted = malloc(sizeof(int) * len + 1);
+    while (i < len)
+        sorted[i++]=array[i++]
+    while (i < len)
+    {
+        if (sorted[i] > sorted[i + 1])
+        {
+            tmp = sorted[i];
+            sorted[i] = sorted[i + 1];
+            sorted[i + 1] = tmp;
+            i = 0;
+        }
+        else
+            i++;
+    }
 }
 
-int get_median(int *array)
+int get_median(int *array, int len)
 {
-    int len;
     int *sorted;
 
     sorted = get_sorted(array);
-    len = array_len(sorted);
     if (len % 2 == 0)
         return(sorted[len/2]);
     else

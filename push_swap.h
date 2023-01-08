@@ -4,6 +4,8 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+//borrar
+# include <stdio.h>
 
 void    push_swap(int *array);
 void    rotate(int *array);
