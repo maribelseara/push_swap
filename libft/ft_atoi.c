@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mseara <mseara@student.42barcelon>         +#+  +:+       +#+        */
+/*   By: mseara <mseara@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 14:59:53 by mseara            #+#    #+#             */
-/*   Updated: 2022/09/18 15:05:35 by mseara           ###   ########.fr       */
+/*   Updated: 2023/01/12 15:37:35 by mseara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	ft_isspace(char c)
+int	ft_isspace(char c)
 {
 	if (c == ' ' || c == '\t' || c == '\n' || c == '	')
 		return (1);
