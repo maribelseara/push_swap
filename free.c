@@ -1,6 +1,6 @@
 # include "push_swap.h"
 
-void free_stack(t_stack stackx)
+void free_stack(t_stack **stackx)
 {
     t_stack *nextnode;
 
@@ -9,7 +9,6 @@ void free_stack(t_stack stackx)
 		while (*stackx)
 		{
 			nextnode = (*stackx)->next;
-			//ft_lstdelone(*lst, del);
             free(stackx);
 			*stackx = nextnode;
 		}	
