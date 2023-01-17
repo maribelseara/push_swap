@@ -5,3 +5,6 @@
 *.out
 *.gch
 .DS_Store
+*.o
+*.d
+*.a
