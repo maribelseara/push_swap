@@ -1,6 +1,6 @@
 # include "push_swap.h"
 
-long long int   atol(char   *str)
+long long int   ft_atol(const char   *str)
 {
     long long int   num;
     int is_negative;
@@ -24,9 +24,3 @@ long long int   atol(char   *str)
     return(num);
 }
 
-void    ft_exit(t_list *stacka, t_list *stackb)
-{
-    ft_free_stack(stacka);
-    ft_free_stack(stackb);
-    exit(-1);
-}
