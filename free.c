@@ -15,3 +15,10 @@ void ft_free_stack(t_list **stackx)
 	}
 	*stackx = NULL;
 }
+
+void    ft_exit(t_list *stacka, t_list *stackb)
+{
+    ft_free_stack(stacka);
+    ft_free_stack(stackb);
+    exit(-1);
+}

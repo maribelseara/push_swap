@@ -24,10 +24,10 @@ static int check_arguments(int ac, char **argv)
     return(0);
 }
 
-t_list  ft_create_stacka(int ac, char **argv)
+t_list  *ft_create_stacka(int ac, char **argv)
 {
     t_list  *stacka;
-    t_list  node;
+    t_list  *node;
     long long int num;
     int i;
     
@@ -40,7 +40,7 @@ t_list  ft_create_stacka(int ac, char **argv)
             ft_putstr_fd("Error\n", 1);
             ft_exit(stacka, NULL);
         }
-        node = ft_lstnew((num);
+        node = ft_lstnew(&num);
         if(!node)
             ft_exit(stacka, NULL);
         ft_lstadd_back(&stacka, node);
@@ -50,7 +50,7 @@ t_list  ft_create_stacka(int ac, char **argv)
 
 int main(int ac, char **argv)
 {
-    t_list  stacka;
+    t_list  *stacka;
 
     if (check_arguments(ac, argv) == -1)
     {
