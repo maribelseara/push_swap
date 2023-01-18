@@ -24,13 +24,39 @@ static int check_arguments(int ac, char **argv)
     return(0);
 }
 
+t_list  ft_create_stacka(int ac, char **argv)
+{
+    t_list  *stacka;
+    t_list  node;
+    long long int num;
+    int i;
+    
+    i = 1;
+    while(i < ac)
+    {
+        num = ft_atol(argv[i]);
+        if (num > INT_MAX || num < INT_MIN)
+        {
+            ft_putstr_fd("Error\n", 1);
+            ft_exit(stacka, NULL);
+        }
+        node = ft_lstnew((num);
+        if(!node)
+            ft_exit(stacka, NULL);
+        ft_lstadd_back(&stacka, node);
+    }
+    return(stacka);
+}
+
 int main(int ac, char **argv)
 {
+    t_list  stacka;
 
-    if (ac == 1 || check_arguments(ac, argv) == -1)
+    if (check_arguments(ac, argv) == -1)
     {
         ft_putstr_fd("Error\n", 1);
         return(-1);
     }
+    stacka = ft_create_stacka(ac, argv);
     return(0);
 }

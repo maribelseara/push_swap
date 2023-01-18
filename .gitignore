@@ -8,3 +8,5 @@
 *.o
 *.d
 *.a
+*README.md
+push_swap

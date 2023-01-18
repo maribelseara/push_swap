@@ -1,6 +1,6 @@
 # include "push_swap.h"
 
-void free_stack(t_list **stackx)
+void ft_free_stack(t_list **stackx)
 {
     t_list *nextnode;
 
