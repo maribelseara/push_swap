@@ -2,7 +2,7 @@
 
 void ft_free_stack(t_list **stackx)
 {
-    t_list *nextnode;
+	t_list *nextnode;
 
     if (stackx)
 	{
@@ -18,7 +18,7 @@ void ft_free_stack(t_list **stackx)
 
 void    ft_exit(t_list *stacka, t_list *stackb)
 {
-    ft_free_stack(stacka);
-    ft_free_stack(stackb);
+    ft_free_stack(&stacka);
+    ft_free_stack(&stackb);
     exit(-1);
 }

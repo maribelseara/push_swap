@@ -10,3 +10,4 @@
 *.a
 *README.md
 push_swap
+*./libft/.bonus

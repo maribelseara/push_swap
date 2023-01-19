@@ -15,7 +15,7 @@ $(OBJ_DIR)%.o: %.c Makefile
 all: $(NAME)
 
 $(NAME) : $(OBJS)
-	@make -C $(LIBFT)
+	@make bonus -C $(LIBFT)
 	$(CC) $(CFLAGS) $(OBJS) $(LIBRARY) -I./ -o $@
 
 -include $(DEPS)
