@@ -20,5 +20,5 @@ it_list         *ft_ilstnew(int content);
 void	        ft_ilstadd_back(it_list **lst, it_list *new);
 it_list	        *ft_ilstlast(it_list *lst);
 //borrar
-void    ft_printlst(it_list *lst);
+//void    ft_printlst(it_list *lst);
 #endif
