@@ -50,9 +50,23 @@ static it_list  *ft_create_stacka(int ac, char **argv)
     return(stacka);
 }
 
-static void    ft_check_duplicates(it_list stacka)
+static void    ft_check_duplicates(it_list *stacka)
 {
-    
+    it_list *compare;
+    while(stacka)
+    {
+        compare = stacka->next;
+        while (compare)
+        {
+            if (compare->content == stacka->content)
+            {
+                ft_putstr_fd("Error\n", 1);
+                ft_exit(stacka, NULL);
+            }
+            compare = compare->next;
+        }
+        stacka = stacka->next;
+    }
 }
 
 int main(int ac, char **argv)
