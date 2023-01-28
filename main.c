@@ -71,7 +71,8 @@ static void    ft_check_duplicates(it_list *stacka)
 
 int main(int ac, char **argv)
 {
-    it_list  *stacka;
+    it_list *stacka;
+    it_list *stackb;
 
     if (check_arguments(ac, argv) == -1)
     {
@@ -80,5 +81,8 @@ int main(int ac, char **argv)
     }
     stacka = ft_create_stacka(ac, argv);
     ft_check_duplicates(stacka);
+    stackb = NULL;
+    ft_swap(&stacka, 'a');
+    ft_printlst(stacka);
     return(0);
 }

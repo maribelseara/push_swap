@@ -19,6 +19,9 @@ void            ft_exit(it_list *stacka, it_list *stackb);
 it_list         *ft_ilstnew(int content);
 void	        ft_ilstadd_back(it_list **lst, it_list *new);
 it_list	        *ft_ilstlast(it_list *lst);
+void			ft_swap (it_list **stackx, char stack_identifier);
+int				ft_count_lst_items(it_list *lst);
+void			ft_ss (it_list **stacka, it_list **stackb);
 //borrar
-//void    ft_printlst(it_list *lst);
+void    ft_printlst(it_list *lst);
 #endif

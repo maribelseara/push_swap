@@ -20,9 +20,7 @@ it_list	*ft_ilstlast(it_list *lst)
 		return (NULL);
 	last = lst;
 	while (last->next)
-	{
 		last = last->next;
-	}
 	return (last);
 }
 
@@ -40,4 +38,19 @@ void	ft_ilstadd_back(it_list **lst, it_list *new)
 			last->next = new;
 		}
 	}
+}
+
+int	ft_count_lst_items(it_list *lst)
+{
+	int	items;
+
+	items = 0;
+	if (!lst)
+		return (items);
+	while(lst->next)
+	{
+		items++;
+		lst = lst->next;
+	}
+	return (items);
 }
