@@ -11,11 +11,11 @@ static void    ft_swap_movement (it_list **stackx)
     (*stackx)->next->content = tmp;
 }
 
-void    ft_swap (it_list **stackx, char stack_identifier)
+void    ft_swap (it_list **stackx, char stackname)
 {
     ft_swap_movement(stackx);
     ft_putchar_fd('s', 1);
-    ft_putchar_fd(stack_identifier, 1);
+    ft_putchar_fd(stackname, 1);
     ft_putchar_fd('\n', 1);
 }
 

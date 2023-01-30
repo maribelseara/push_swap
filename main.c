@@ -82,9 +82,9 @@ int main(int ac, char **argv)
     stacka = ft_create_stacka(ac, argv);
     ft_check_duplicates(stacka);
     stackb = NULL;
-    ft_push(&stacka, &stackb, 'b');
+    ft_rotate(&stacka, 'a');
     ft_printlst(stacka);
-    ft_putchar_fd('\n', 1);
-    ft_printlst(stackb);
+    //ft_putchar_fd('\n', 1);
+    //ft_printlst(stackb);
     return(0);
 }
