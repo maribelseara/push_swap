@@ -44,7 +44,7 @@ int	ft_count_lst_items(it_list *lst)
 {
 	int	items;
 
-	items = 0;
+	items = 1;
 	if (!lst)
 		return (items);
 	while(lst->next)
@@ -53,4 +53,20 @@ int	ft_count_lst_items(it_list *lst)
 		lst = lst->next;
 	}
 	return (items);
+}
+
+int	ft_is_lst_sorted(it_list **stacka, it_list **stackb)
+{
+	it_list	*tmp;
+
+	if ((*stackb))
+		return (0);
+	tmp = *stacka;
+	while (tmp->next != NULL)
+	{
+		if (tmp->content > tmp->next->content)
+			return (0);
+		tmp = tmp->next;
+	}
+	return(1);
 }

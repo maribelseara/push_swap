@@ -74,6 +74,8 @@ int main(int ac, char **argv)
     it_list *stacka;
     it_list *stackb;
 
+    if (ac <= 2)
+        return(0);
     if (check_arguments(ac, argv) == -1)
     {
         ft_putstr_fd("Error\n", 1);
@@ -82,9 +84,7 @@ int main(int ac, char **argv)
     stacka = ft_create_stacka(ac, argv);
     ft_check_duplicates(stacka);
     stackb = NULL;
-    ft_reverse_rotate(&stacka, 'a');
+    ft_filter_elements_number(&stacka, &stackb);
     ft_printlst(stacka);
-    //ft_putchar_fd('\n', 1);
-    //ft_printlst(stackb);
-    return(0);
+    return(0); 
 }

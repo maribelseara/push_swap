@@ -27,6 +27,8 @@ void			ft_rotate(it_list **stackx, char stackname);
 void			ft_rr(it_list **stacka, it_list **stackb);
 void			ft_reverse_rotate(it_list **stackx, char stackname);
 void			ft_rrr(it_list **stacka, it_list **stackb);
+int				ft_is_lst_sorted(it_list **stacka, it_list **stackb);
+void			ft_filter_elements_number (it_list **stacka, it_list **stackb);
 //borrar
 void    ft_printlst(it_list *lst);
 #endif
