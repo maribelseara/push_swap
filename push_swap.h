@@ -6,7 +6,7 @@
 /*   By: mseara <mseara@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 10:38:29 by mseara            #+#    #+#             */
-/*   Updated: 2023/02/15 10:48:10 by mseara           ###   ########.fr       */
+/*   Updated: 2023/02/15 12:57:32 by mseara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void			ft_reverse_rotate(t_ilist **stackx, char stackname);
 void			ft_rrr(t_ilist **stacka, t_ilist **stackb);
 int				ft_is_lst_sorted(t_ilist **stacka, t_ilist **stackb);
 void			ft_filter_elements_number (t_ilist **stacka, t_ilist **stackb);
+int				ft_get_median(t_ilist *stackx);
 //borrar
 void	ft_printlst(t_ilist *lst);
 #endif

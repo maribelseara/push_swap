@@ -1,6 +1,6 @@
 # include "push_swap.h"
 
-int *ft_lst_to_array(t_ilist stackx, int items)
+static int *ft_lst_to_array(t_ilist *stackx, int items)
 {
     int *sorted;
     int i;
@@ -12,9 +12,10 @@ int *ft_lst_to_array(t_ilist stackx, int items)
         sorted[i++]=stackx->content;
         stackx = stackx->next;
     }
+    return (sorted);
 }
 
-int *ft_get_sorted_array (t_ilist stackx, int items)
+static int *ft_get_sorted_array (t_ilist *stackx, int items)
 {
     int *sorted;
     int i;
@@ -28,11 +29,11 @@ int *ft_get_sorted_array (t_ilist stackx, int items)
         j = 1;
         while (j < items)
         {
-            if (array[j - 1] > array[j])
+            if (sorted[j - 1] > sorted[j])
             {
-                tmp = array[j];
-                array[j] = array[j - 1];
-                array[j - 1]=tmp;
+                tmp = sorted[j];
+                sorted[j] = sorted[j - 1];
+                sorted[j - 1]=tmp;
             }
             j++;
         }
@@ -41,10 +42,11 @@ int *ft_get_sorted_array (t_ilist stackx, int items)
     return (sorted);
 }
 
-int ft_get_median(t_ilist stackx)
+int ft_get_median(t_ilist *stackx)
 {
     int items;
     int *sorted;
+    int median;
 
     items = ft_count_lst_items(stackx);
     sorted = ft_get_sorted_array(stackx, items);
