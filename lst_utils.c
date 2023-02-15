@@ -1,10 +1,10 @@
 # include "push_swap.h"
 
-it_list	*ft_ilstnew(int content)
+t_ilist	*ft_ilstnew(int content)
 {
-	it_list	*lst;
+	t_ilist	*lst;
 
-	lst = malloc(sizeof(it_list) * 1);
+	lst = malloc(sizeof(t_ilist) * 1);
 	if (!lst)
 		return (NULL);
 	lst->content = content;
@@ -12,9 +12,9 @@ it_list	*ft_ilstnew(int content)
 	return (lst);
 }
 
-it_list	*ft_ilstlast(it_list *lst)
+t_ilist	*ft_ilstlast(t_ilist *lst)
 {
-	it_list	*last;
+	t_ilist	*last;
 
 	if (!lst)
 		return (NULL);
@@ -24,9 +24,9 @@ it_list	*ft_ilstlast(it_list *lst)
 	return (last);
 }
 
-void	ft_ilstadd_back(it_list **lst, it_list *new)
+void	ft_ilstadd_back(t_ilist **lst, t_ilist *new)
 {
-	it_list	*last;
+	t_ilist	*last;
 
 	if (lst)
 	{
@@ -40,7 +40,7 @@ void	ft_ilstadd_back(it_list **lst, it_list *new)
 	}
 }
 
-int	ft_count_lst_items(it_list *lst)
+int	ft_count_lst_items(t_ilist *lst)
 {
 	int	items;
 
@@ -55,9 +55,9 @@ int	ft_count_lst_items(it_list *lst)
 	return (items);
 }
 
-int	ft_is_lst_sorted(it_list **stacka, it_list **stackb)
+int	ft_is_lst_sorted(t_ilist **stacka, t_ilist **stackb)
 {
-	it_list	*tmp;
+	t_ilist	*tmp;
 
 	if ((*stackb))
 		return (0);

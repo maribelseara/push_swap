@@ -24,10 +24,10 @@ static int check_arguments(int ac, char **argv)
     return(0);
 }
 
-static it_list  *ft_create_stacka(int ac, char **argv)
+static t_ilist  *ft_create_stacka(int ac, char **argv)
 {
-    it_list  *stacka;
-    it_list  *node;
+    t_ilist  *stacka;
+    t_ilist  *node;
     long long int num;
     int i;
     
@@ -50,9 +50,9 @@ static it_list  *ft_create_stacka(int ac, char **argv)
     return(stacka);
 }
 
-static void    ft_check_duplicates(it_list *stacka)
+static void    ft_check_duplicates(t_ilist *stacka)
 {
-    it_list *compare;
+    t_ilist *compare;
     while(stacka)
     {
         compare = stacka->next;
@@ -71,8 +71,8 @@ static void    ft_check_duplicates(it_list *stacka)
 
 int main(int ac, char **argv)
 {
-    it_list *stacka;
-    it_list *stackb;
+    t_ilist *stacka;
+    t_ilist *stackb;
 
     if (ac < 2)
         return(0);

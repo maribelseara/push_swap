@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mseara <mseara@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/15 10:38:29 by mseara            #+#    #+#             */
+/*   Updated: 2023/02/15 10:48:10 by mseara           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP
 # define PUSH_SWAP
 
@@ -6,29 +18,29 @@
 //borrar
 # include <stdio.h>
 
-typedef struct is_list
+typedef struct s_ilist
 {
-	int			    content;
-	struct is_list	*next;
-}	it_list;
+	int				content;
+	struct s_ilist	*next;
+}	t_ilist;
 
-void            ft_free_stack(it_list **stackx);
-long long int   ft_atol(const char   *str);
-void            ft_exit(it_list *stacka, it_list *stackb);
-void            ft_exit(it_list *stacka, it_list *stackb);
-it_list         *ft_ilstnew(int content);
-void	        ft_ilstadd_back(it_list **lst, it_list *new);
-it_list	        *ft_ilstlast(it_list *lst);
-void			ft_swap (it_list **stackx, char stackname);
-int				ft_count_lst_items(it_list *lst);
-void			ft_ss (it_list **stacka, it_list **stackb);
-void    		ft_push(it_list **source, it_list **destination, char stackname);
-void			ft_rotate(it_list **stackx, char stackname);
-void			ft_rr(it_list **stacka, it_list **stackb);
-void			ft_reverse_rotate(it_list **stackx, char stackname);
-void			ft_rrr(it_list **stacka, it_list **stackb);
-int				ft_is_lst_sorted(it_list **stacka, it_list **stackb);
-void			ft_filter_elements_number (it_list **stacka, it_list **stackb);
+void			ft_free_stack(t_ilist **stackx);
+long long int	ft_atol(const char	 *str);
+void			ft_exit(t_ilist *stacka, t_ilist *stackb);
+void			ft_exit(t_ilist *stacka, t_ilist *stackb);
+t_ilist			*ft_ilstnew(int content);
+void			ft_ilstadd_back(t_ilist **lst, t_ilist *new);
+t_ilist			*ft_ilstlast(t_ilist *lst);
+void			ft_swap (t_ilist **stackx, char stackname);
+int				ft_count_lst_items(t_ilist *lst);
+void			ft_ss (t_ilist **stacka, t_ilist **stackb);
+void			ft_push(t_ilist **source, t_ilist **destination, char stackname);
+void			ft_rotate(t_ilist **stackx, char stackname);
+void			ft_rr(t_ilist **stacka, t_ilist **stackb);
+void			ft_reverse_rotate(t_ilist **stackx, char stackname);
+void			ft_rrr(t_ilist **stacka, t_ilist **stackb);
+int				ft_is_lst_sorted(t_ilist **stacka, t_ilist **stackb);
+void			ft_filter_elements_number (t_ilist **stacka, t_ilist **stackb);
 //borrar
-void    ft_printlst(it_list *lst);
+void	ft_printlst(t_ilist *lst);
 #endif

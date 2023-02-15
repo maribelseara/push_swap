@@ -1,6 +1,6 @@
 # include "push_swap.h"
 
-static void    ft_swap_movement (it_list **stackx)
+static void    ft_swap_movement (t_ilist **stackx)
 {
     int tmp;
 
@@ -11,7 +11,7 @@ static void    ft_swap_movement (it_list **stackx)
     (*stackx)->next->content = tmp;
 }
 
-void    ft_swap (it_list **stackx, char stackname)
+void    ft_swap (t_ilist **stackx, char stackname)
 {
     ft_swap_movement(stackx);
     ft_putchar_fd('s', 1);
@@ -19,7 +19,7 @@ void    ft_swap (it_list **stackx, char stackname)
     ft_putchar_fd('\n', 1);
 }
 
-void    ft_ss (it_list **stacka, it_list **stackb)
+void    ft_ss (t_ilist **stacka, t_ilist **stackb)
 {
     ft_swap_movement(stacka);
     ft_swap_movement(stackb);

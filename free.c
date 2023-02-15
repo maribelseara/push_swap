@@ -1,8 +1,8 @@
 # include "push_swap.h"
 
-void ft_free_stack(it_list **stackx)
+void ft_free_stack(t_ilist **stackx)
 {
-	it_list *nextnode;
+	t_ilist *nextnode;
 
     if (stackx)
 	{
@@ -16,7 +16,7 @@ void ft_free_stack(it_list **stackx)
 	*stackx = NULL;
 }
 
-void    ft_exit(it_list *stacka, it_list *stackb)
+void    ft_exit(t_ilist *stacka, t_ilist *stackb)
 {
     ft_free_stack(&stacka);
     ft_free_stack(&stackb);

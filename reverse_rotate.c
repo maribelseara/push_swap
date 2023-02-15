@@ -1,8 +1,8 @@
 # include "push_swap.h"
 
-void ft_reverse_rotate_movement(it_list **stackx)
+void ft_reverse_rotate_movement(t_ilist **stackx)
 {
-    it_list *tmp;
+    t_ilist *tmp;
     int    origin;
     int    dest;
 
@@ -20,7 +20,7 @@ void ft_reverse_rotate_movement(it_list **stackx)
     (*stackx)->content = origin;
 }
 
-void    ft_reverse_rotate(it_list **stackx, char stackname)
+void    ft_reverse_rotate(t_ilist **stackx, char stackname)
 {
     ft_reverse_rotate_movement(stackx);
     ft_putstr_fd("rr", 1);
@@ -28,7 +28,7 @@ void    ft_reverse_rotate(it_list **stackx, char stackname)
     ft_putchar_fd('\n', 1);
 }
 
-void    ft_rrr(it_list **stacka, it_list **stackb)
+void    ft_rrr(t_ilist **stacka, t_ilist **stackb)
 {
     ft_reverse_rotate_movement(stacka);
     ft_reverse_rotate_movement(stackb);

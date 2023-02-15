@@ -1,12 +1,12 @@
 # include "push_swap.h"
 
-static void    ft_sort_two(it_list **stacka, it_list **stackb)
+static void    ft_sort_two(t_ilist **stacka, t_ilist **stackb)
 {
     if (ft_is_lst_sorted(stacka, stackb) == 0)
         ft_swap(stacka, 'a');
 }
 
-static void ft_sort_three_else(it_list **stacka)
+static void ft_sort_three_else(t_ilist **stacka)
 {
     if ((*stacka)->content < (*stacka)->next->next->content)
             ft_swap(stacka, 'a');
@@ -22,7 +22,7 @@ static void ft_sort_three_else(it_list **stacka)
         }
 }
 
-static void ft_sort_three(it_list **stacka, it_list **stackb)
+static void ft_sort_three(t_ilist **stacka, t_ilist **stackb)
 {
     if (ft_is_lst_sorted(stacka, stackb))
         return;
@@ -40,7 +40,7 @@ static void ft_sort_three(it_list **stacka, it_list **stackb)
        ft_sort_three_else(stacka); 
 }
 
-void    ft_filter_elements_number (it_list **stacka, it_list **stackb)
+void    ft_filter_elements_number (t_ilist **stacka, t_ilist **stackb)
 {
     int elements;
 

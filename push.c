@@ -1,9 +1,9 @@
 #include "push_swap.h"
 
-static void    ft_push_movement(it_list **source, it_list **destination)
+static void    ft_push_movement(t_ilist **source, t_ilist **destination)
 {
-    it_list *tmp;
-    it_list *newsource;
+    t_ilist *tmp;
+    t_ilist *newsource;
 
     if (!*source)
         return;
@@ -14,7 +14,7 @@ static void    ft_push_movement(it_list **source, it_list **destination)
     *source= newsource;
 }
 
-void    ft_push(it_list **source, it_list **destination, char stackname)
+void    ft_push(t_ilist **source, t_ilist **destination, char stackname)
 {
     ft_push_movement(source, destination);
     ft_putchar_fd('p', 1);
