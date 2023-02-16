@@ -42,6 +42,7 @@ void			ft_rrr(t_ilist **stacka, t_ilist **stackb);
 int				ft_is_lst_sorted(t_ilist **stacka, t_ilist **stackb);
 void			ft_filter_elements_number (t_ilist **stacka, t_ilist **stackb);
 int				ft_get_median(t_ilist *stackx);
+void			ft_sort_three(t_ilist **stacka, t_ilist **stackb);
 //borrar
 void	ft_printlst(t_ilist *lst);
 #endif

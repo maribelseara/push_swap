@@ -22,7 +22,7 @@ static void ft_sort_three_else(t_ilist **stacka)
         }
 }
 
-static void ft_sort_three(t_ilist **stacka, t_ilist **stackb)
+void ft_sort_three(t_ilist **stacka, t_ilist **stackb)
 {
     if (ft_is_lst_sorted(stacka, stackb))
         return;
@@ -49,4 +49,6 @@ void    ft_filter_elements_number (t_ilist **stacka, t_ilist **stackb)
         ft_sort_two(stacka, stackb);
     else if (elements == 3)
         ft_sort_three(stacka, stackb);
+    else if (elements <= 5)
+        ft_sort_four_five(stacka, stackb);
 }

@@ -50,6 +50,6 @@ int ft_get_median(t_ilist *stackx)
 
     items = ft_count_lst_items(stackx);
     sorted = ft_get_sorted_array(stackx, items);
-    median = sorted[items/2];
+    median = sorted[(items-1)/2];
     return (median);
 }
