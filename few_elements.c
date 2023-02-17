@@ -1,6 +1,6 @@
 # include "push_swap.h"
 
-static void    ft_sort_two(t_ilist **stacka, t_ilist **stackb)
+void    ft_sort_two(t_ilist **stacka, t_ilist **stackb)
 {
     if (ft_is_lst_sorted(stacka, stackb) == 0)
         ft_swap(stacka, 'a');
