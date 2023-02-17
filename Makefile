@@ -6,7 +6,7 @@ LIBRARY = ./libft/libft.a
 OBJ_DIR = ./obj/
 OBJS = $(addprefix $(OBJ_DIR), $(SRC:.c=.o))
 DEPS = $(addsuffix .d, $(basename $(OBJS)))
-SRC = main.c free.c utils.c lst_utils.c swap.c push.c rotate.c reverse_rotate.c few_elements.c median.c testeo.c
+SRC = main.c free.c utils.c lst_utils.c swap.c push.c rotate.c reverse_rotate.c few_elements.c median.c sort_four_five.c testeo.c
 
 $(OBJ_DIR)%.o: %.c Makefile
 	@mkdir -p $(OBJ_DIR)
@@ -15,7 +15,7 @@ $(OBJ_DIR)%.o: %.c Makefile
 all: $(NAME)
 
 $(NAME) : $(OBJS)
-	@make bonus -C $(LIBFT)
+	@make -C $(LIBFT)
 	$(CC) $(CFLAGS) $(OBJS) $(LIBRARY) -I./ -o $@
 
 -include $(DEPS)
