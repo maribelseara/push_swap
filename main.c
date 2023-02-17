@@ -87,8 +87,7 @@ int main(int ac, char **argv)
     ft_check_duplicates(stacka);
     stackb = NULL;
     ft_filter_elements_number(&stacka, &stackb);
-    ft_printlst(stacka);
-    //printf("Mediana del stack: %d\n", ft_get_median(stacka));
+    //ft_printlst(stacka);
     ft_exit(stacka, stackb);
     return(0); 
 }
