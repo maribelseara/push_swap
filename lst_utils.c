@@ -55,12 +55,10 @@ int	ft_count_lst_items(t_ilist *lst)
 	return (items);
 }
 
-int	ft_is_lst_sorted(t_ilist **stacka, t_ilist **stackb)
+int	ft_is_lst_sorted(t_ilist **stacka)
 {
 	t_ilist	*tmp;
 
-	if ((*stackb))
-		return (0);
 	tmp = *stacka;
 	while (tmp->next != NULL)
 	{
