@@ -95,8 +95,11 @@ int main(int ac, char **argv)
         return(0);
     if (ac == 2)
     {
-        args = ft_split(argv[1], ' ');
         numargs = ft_items(argv[1], ' ');
+        if (numargs > 0)
+            args = ft_split(argv[1], ' ');
+        else
+            return(0);
     }
     else
     {
