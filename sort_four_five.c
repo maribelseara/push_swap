@@ -14,13 +14,15 @@ void    ft_move_lst_element(t_ilist **stacka, int *position)
     }
 }
 
-void    ft_divide_stacks(t_ilist **stacka, t_ilist **stackb, int median, int to_pass)
+void    ft_divide_stacks(t_ilist **stacka, t_ilist **stackb, int median)
 {
     t_ilist *tmp;
     int position;
+    int to_pass;
 
     position = 1;
     tmp = *stacka;
+    to_pass = ft_count_lst_items(*stacka) / 2;
     while (to_pass > 0)
     {
         if ((tmp)->content <= median)
@@ -42,13 +44,11 @@ void    ft_divide_stacks(t_ilist **stacka, t_ilist **stackb, int median, int to_
 void    ft_sort_four_five(t_ilist **stacka, t_ilist **stackb)
 {
     int median;
-    int to_pass;
-        
-    to_pass = ft_count_lst_items(*stacka) / 2;
+    
     if (ft_is_lst_sorted(stacka, stackb))
         return;
     median = ft_get_median(*stacka);
-    ft_divide_stacks(stacka, stackb, median, to_pass);
+    ft_divide_stacks(stacka, stackb, median);
     if (ft_count_lst_items(*stacka) == 3)
         ft_sort_three(stacka, stackb);
     else
