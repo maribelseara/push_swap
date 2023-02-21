@@ -1,6 +1,16 @@
 # include "push_swap.h"
 
-void ft_free_stack(t_ilist **stackx)
+void	ft_free_args(int numargs, char **args)
+{
+	int i;
+
+	i = 0;
+	while (i < numargs)
+		free(args[i++]);
+	free(args);
+}
+
+void	ft_free_stack(t_ilist **stackx)
 {
 	t_ilist *nextnode;
 

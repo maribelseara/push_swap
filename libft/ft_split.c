@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mseara <mseara@student.42barcelon>         +#+  +:+       +#+        */
+/*   By: mseara <mseara@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 17:43:26 by mseara            #+#    #+#             */
-/*   Updated: 2022/10/01 12:09:46 by mseara           ###   ########.fr       */
+/*   Updated: 2023/02/21 10:59:43 by mseara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void	*free_all(char **array, int items)
 	return (NULL);
 }
 
-static int	ft_items(char const *s, char c)
+int	ft_items(char const *s, char c)
 {
 	int	i;
 	int	items;

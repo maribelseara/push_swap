@@ -6,7 +6,7 @@
 /*   By: mseara <mseara@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 10:38:29 by mseara            #+#    #+#             */
-/*   Updated: 2023/02/17 11:55:58 by mseara           ###   ########.fr       */
+/*   Updated: 2023/02/21 11:40:59 by mseara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void			ft_ilstadd_back(t_ilist **lst, t_ilist *new);
 t_ilist			*ft_ilstlast(t_ilist *lst);
 void			ft_swap (t_ilist **stackx, char stackname);
 int				ft_count_lst_items(t_ilist *lst);
+void			ft_free_args(int numargs, char **args);
 void			ft_ss (t_ilist **stacka, t_ilist **stackb);
 void			ft_push(t_ilist **source, t_ilist **destination, char stackname);
 void			ft_rotate(t_ilist **stackx, char stackname);

@@ -1,21 +1,36 @@
 # include "push_swap.h"
 
-static int check_arguments(int ac, char **argv)
+static char** ft_copy_arguments(int ac, char **argv)
+{
+    int i;
+    char **args;
+
+    i = 0;
+    args = malloc(sizeof(char *) * (ac - 1));
+    while (i <  ac - 1)
+    {
+        args[i] = ft_strdup(argv[i + 1]);
+        i++;
+    }
+    return (args);
+}
+
+static int check_arguments(int numargs, char **args)
 {
     int i;
     int j;
 
-    i = 1;
-    while (i < ac)
+    i = 0;
+    while (i < numargs)
     {
         j = 0;
-        while (ft_isspace(argv[i][j]))
+        while (ft_isspace(args[i][j]))
             j++;
-        if (argv[i][j] == '-' || argv[i][j] == '+')
+        if (args[i][j] == '-' || args[i][j] == '+')
             j++;
-        while (argv[i][j] != '\0')
+        while (args[i][j] != '\0')
         {
-            if (!ft_isdigit(argv[i][j]))
+            if (!ft_isdigit(args[i][j]))
                 return (-1);
             j++;
         }
@@ -24,18 +39,18 @@ static int check_arguments(int ac, char **argv)
     return(0);
 }
 
-static t_ilist  *ft_create_stacka(int ac, char **argv)
+static t_ilist  *ft_create_stacka(int numargs, char **args)
 {
     t_ilist  *stacka;
     t_ilist  *node;
     long long int num;
     int i;
     
-    i = 1;
+    i = 0;
     stacka = NULL;
-    while(i < ac)
+    while(i < numargs)
     {
-        num = ft_atol(argv[i]);
+        num = ft_atol(args[i]);
         if (num > INT_MAX || num < INT_MIN)
         {
             ft_putstr_fd("Error\n", 1);
@@ -73,17 +88,30 @@ int main(int ac, char **argv)
 {
     t_ilist *stacka;
     t_ilist *stackb;
+    char    **args;
+    int     numargs;
 
     if (ac < 2)
         return(0);
-    if (check_arguments(ac, argv) == -1)
+    if (ac == 2)
+    {
+        args = ft_split(argv[1], ' ');
+        numargs = ft_items(argv[1], ' ');
+    }
+    else
+    {
+        numargs = ac - 1;
+        args =ft_copy_arguments(ac, argv);
+    }
+    if (check_arguments(numargs, args) == -1)
     {
         ft_putstr_fd("Error\n", 1);
         return(-1);
     }
-    if (ac == 2)
+    if (numargs == 1)
         return (0);
-    stacka = ft_create_stacka(ac, argv);
+    stacka = ft_create_stacka(numargs, args);
+    ft_free_args(numargs, args);
     ft_check_duplicates(stacka);
     stackb = NULL;
     ft_filter_elements_number(&stacka, &stackb);
