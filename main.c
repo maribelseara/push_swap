@@ -28,6 +28,8 @@ static int check_arguments(int numargs, char **args)
             j++;
         if (args[i][j] == '-' || args[i][j] == '+')
             j++;
+        if (args[i][j]=='\0')
+            return(-1);
         while (args[i][j] != '\0')
         {
             if (!ft_isdigit(args[i][j]))
@@ -53,7 +55,7 @@ static t_ilist  *ft_create_stacka(int numargs, char **args)
         num = ft_atol(args[i]);
         if (num > INT_MAX || num < INT_MIN)
         {
-            ft_putstr_fd("Error\n", 1);
+            ft_putstr_fd("Error\n", 2);
             ft_exit(stacka, NULL);
         }
         node = ft_ilstnew(num);
@@ -75,7 +77,7 @@ static void    ft_check_duplicates(t_ilist *stacka)
         {
             if (compare->content == stacka->content)
             {
-                ft_putstr_fd("Error\n", 1);
+                ft_putstr_fd("Error\n", 2);
                 ft_exit(stacka, NULL);
             }
             compare = compare->next;
@@ -99,7 +101,10 @@ int main(int ac, char **argv)
         if (numargs > 0)
             args = ft_split(argv[1], ' ');
         else
-            return(0);
+        {
+            ft_putstr_fd("Error\n", 2);
+            return(-1);
+        };
     }
     else
     {
@@ -108,15 +113,15 @@ int main(int ac, char **argv)
     }
     if (check_arguments(numargs, args) == -1)
     {
-        ft_putstr_fd("Error\n", 1);
+        ft_putstr_fd("Error\n", 2);
         return(-1);
     }
-    if (numargs == 1)
-        return (0);
     stacka = ft_create_stacka(numargs, args);
     ft_free_args(numargs, args);
     ft_check_duplicates(stacka);
     stackb = NULL;
+    if (numargs == 1)
+        ft_exit(stacka, stackb);
     ft_filter_elements_number(&stacka, &stackb);
     //ft_printlst(stacka);
     ft_exit(stacka, stackb);
