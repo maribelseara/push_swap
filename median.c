@@ -15,7 +15,7 @@ static int *ft_lst_to_array(t_ilist *stackx, int items)
     return (sorted);
 }
 
-static int *ft_get_sorted_array (t_ilist *stackx, int items)
+static int *ft_get_sorted_array(t_ilist *stackx, int items)
 {
     int *sorted;
     int i;
@@ -55,4 +55,16 @@ int ft_get_median(t_ilist *stackx)
     else
         median = sorted[(items-2)/2];
     return (median);
+}
+
+int ft_get_chunk(t_ilist **stacka, int items)
+{
+    int chunk_max;
+    int *sorted;
+    int total_items;
+
+    total_items = ft_count_lst_items(*stacka);
+    sorted = ft_get_sorted_array(*stacka, total_items);
+    chunk_max = sorted[items - 1];
+    return(chunk_max);
 }

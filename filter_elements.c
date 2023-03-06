@@ -51,4 +51,6 @@ void    ft_filter_elements_number (t_ilist **stacka, t_ilist **stackb)
         ft_sort_three(stacka);
     else if (elements <= 5)
         ft_sort_four_five(stacka, stackb);
+    else if (elements <= 100)
+        ft_sort_big_list(stacka, stackb, 5);
 }

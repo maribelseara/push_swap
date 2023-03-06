@@ -123,7 +123,7 @@ int main(int ac, char **argv)
     if (numargs == 1)
         ft_exit(stacka, stackb);
     ft_filter_elements_number(&stacka, &stackb);
-    //ft_printlst(stacka);
+    //ft_printlst(stackb);
     ft_exit(stacka, stackb);
     return(0); 
 }

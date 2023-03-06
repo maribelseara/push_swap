@@ -6,7 +6,7 @@
 /*   By: mseara <mseara@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 10:38:29 by mseara            #+#    #+#             */
-/*   Updated: 2023/02/21 15:12:58 by mseara           ###   ########.fr       */
+/*   Updated: 2023/03/06 12:30:59 by mseara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,10 @@ void			ft_filter_elements_number (t_ilist **stacka, t_ilist **stackb);
 int				ft_get_median(t_ilist *stackx);
 void			ft_sort_two(t_ilist **stacka);
 void			ft_sort_three(t_ilist **stacka);
+void			ft_divide_stacks(t_ilist **stacka, t_ilist **stackb, int chunk_max, int to_pass);
 void			ft_sort_four_five(t_ilist **stacka, t_ilist **stackb);
+void			ft_sort_big_list(t_ilist **stacka, t_ilist **stackb, int num_chunks);
+int				ft_get_chunk(t_ilist **stacka, int items);
 //borrar
 void	ft_printlst(t_ilist *lst);
 #endif
