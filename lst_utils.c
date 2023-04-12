@@ -1,4 +1,16 @@
-# include "push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   lst_utils.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mseara <mseara@student.42barcelon>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/10 15:07:50 by mseara            #+#    #+#             */
+/*   Updated: 2023/03/10 15:07:58 by mseara           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
 
 t_ilist	*ft_ilstnew(int content)
 {
@@ -47,7 +59,7 @@ int	ft_count_lst_items(t_ilist *lst)
 	items = 1;
 	if (!lst)
 		return (items);
-	while(lst->next)
+	while (lst->next)
 	{
 		items++;
 		lst = lst->next;
@@ -66,5 +78,5 @@ int	ft_is_lst_sorted(t_ilist **stacka)
 			return (0);
 		tmp = tmp->next;
 	}
-	return(1);
+	return (1);
 }
