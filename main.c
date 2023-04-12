@@ -6,7 +6,7 @@
 /*   By: mseara <mseara@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:13:20 by mseara            #+#    #+#             */
-/*   Updated: 2023/04/12 16:43:41 by mseara           ###   ########.fr       */
+/*   Updated: 2023/04/12 17:36:38 by mseara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,7 +136,7 @@ int	main(int ac, char **argv)
 	if (numargs == 1)
 		ft_exit(stacka, stackb);
 	ft_filter_elements_number(&stacka, &stackb);
-	ft_printlst(stackb);
+	//ft_printlst(stackb);
 	ft_exit(stacka, stackb);
 	return (0);
 }
