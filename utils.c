@@ -35,3 +35,20 @@ long long int	ft_atol(const char *str)
 	num = num * is_negative;
 	return (num);
 }
+
+void	ft_return_lst_element(t_ilist **stackb, int position)
+{
+	if (position <= ft_count_lst_items(*stackb) / 2)
+	{
+		while (position-- > 1)
+			ft_rotate(stackb, 'b');
+	}
+	else
+	{
+		while (position <= ft_count_lst_items(*stackb))
+		{
+			ft_reverse_rotate(stackb, 'b');
+			position++;
+		}
+	}
+}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lst_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mseara <mseara@student.42barcelon>         +#+  +:+       +#+        */
+/*   By: mseara <mseara@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:07:50 by mseara            #+#    #+#             */
-/*   Updated: 2023/03/10 15:07:58 by mseara           ###   ########.fr       */
+/*   Updated: 2023/04/19 11:41:20 by mseara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	ft_count_lst_items(t_ilist *lst)
 
 	items = 1;
 	if (!lst)
-		return (items);
+		return (0);
 	while (lst->next)
 	{
 		items++;

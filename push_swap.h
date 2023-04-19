@@ -49,6 +49,7 @@ void			ft_divide_stacks(t_ilist **stacka, t_ilist **stackb, int chunk_max, int t
 void			ft_sort_four_five(t_ilist **stacka, t_ilist **stackb);
 void			ft_sort_big_list(t_ilist **stacka, t_ilist **stackb, int num_chunks);
 int				ft_get_chunk(t_ilist **stacka, int items);
+void			ft_return_lst_element(t_ilist **stackb, int position);
 //borrar
 void	ft_printlst(t_ilist *lst);
 #endif
