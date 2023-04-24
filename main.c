@@ -6,7 +6,7 @@
 /*   By: mseara <mseara@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:13:20 by mseara            #+#    #+#             */
-/*   Updated: 2023/04/19 14:22:40 by mseara           ###   ########.fr       */
+/*   Updated: 2023/04/24 10:25:27 by mseara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ int	main(int ac, char **argv)
 	t_ilist	*stackb;
 	char	**args;
 	int		numargs;
-	printf("Empezamos");
+	
 	if (ac < 2)
 		return (0);
 	if (ac == 2)

@@ -6,7 +6,7 @@
 /*   By: mseara <mseara@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:28:15 by mseara            #+#    #+#             */
-/*   Updated: 2023/04/19 14:11:59 by mseara           ###   ########.fr       */
+/*   Updated: 2023/04/24 12:28:23 by mseara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,8 @@ int max, int second_max)
 	position = 1;
 	passed = 0;
 	tmp = *stackb;
-	while (tmp->next)
+	//while (tmp->next)
+	while(tmp)
 	{
 		if (tmp->content == max || tmp->content == second_max)
 		{
@@ -94,8 +95,11 @@ void	ft_return_items_to_stacka(t_ilist **stacka, t_ilist **stackb)
 		}
 		second_max=ft_get_second_max(stackb, max);
 		ft_return_maxs(stacka, stackb, max, second_max);
-		if ((*stacka)->content > (*stacka)->next->content)
-			ft_swap(stacka, 'a');
+		if (ft_count_lst_items(*stacka)>=2)
+		{
+			if ((*stacka)->content > (*stacka)->next->content)
+				ft_swap(stacka, 'a');
+		}
 	}
 }
 

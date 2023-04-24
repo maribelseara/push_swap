@@ -18,3 +18,4 @@ push_swap_test.sh
 traces.txt
 ._checker_Mac
 checker_Mac
+*.py
