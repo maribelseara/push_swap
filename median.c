@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   median.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mseara <mseara@student.42barcelon>         +#+  +:+       +#+        */
+/*   By: mseara <mseara@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:18:30 by mseara            #+#    #+#             */
-/*   Updated: 2023/03/10 15:18:34 by mseara           ###   ########.fr       */
+/*   Updated: 2023/05/03 11:28:05 by mseara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ static int	*ft_lst_to_array(t_ilist *stackx, int items)
 	int	i;
 
 	sorted = malloc(sizeof(int) * items);
+	if (!sorted)
+		return (0);
 	i = 0;
 	while (i < items)
 	{
@@ -35,6 +37,8 @@ static int	*ft_get_sorted_array(t_ilist *stackx, int items)
 	int	tmp;
 
 	sorted = ft_lst_to_array(stackx, items);
+	if (!sorted)
+		return (NULL);
 	i = 0;
 	while (i < items - 1)
 	{
@@ -62,10 +66,13 @@ int	ft_get_median(t_ilist *stackx)
 
 	items = ft_count_lst_items(stackx);
 	sorted = ft_get_sorted_array(stackx, items);
+	if (!sorted)
+		return (0);
 	if (ft_count_lst_items(stackx) % 2 == 0)
 		median = sorted[(items - 1) / 2];
 	else
 		median = sorted[(items - 2) / 2];
+	free(sorted);
 	return (median);
 }
 
@@ -77,6 +84,9 @@ int	ft_get_chunk(t_ilist **stacka, int items)
 
 	total_items = ft_count_lst_items(*stacka);
 	sorted = ft_get_sorted_array(*stacka, total_items);
+	if (!sorted)
+		return (0);
 	chunk_max = sorted[items - 1];
+	free(sorted);
 	return (chunk_max);
 }

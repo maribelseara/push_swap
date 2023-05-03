@@ -6,7 +6,7 @@
 /*   By: mseara <mseara@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:13:20 by mseara            #+#    #+#             */
-/*   Updated: 2023/04/24 10:25:27 by mseara           ###   ########.fr       */
+/*   Updated: 2023/05/03 11:20:25 by mseara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@ static char	**ft_copy_arguments(int ac, char **argv)
 
 	i = 0;
 	args = malloc(sizeof(char *) * (ac - 1));
+	//Revisar funcion a la que retorna
+	if (!args)
+		return (NULL);
 	while (i < ac - 1)
 	{
 		args[i] = ft_strdup(argv[i + 1]);
@@ -123,6 +126,11 @@ int	main(int ac, char **argv)
 	{
 		numargs = ac - 1;
 		args = ft_copy_arguments(ac, argv);
+		if (!args)
+		{
+			free(args);
+			return(0);
+		}
 	}
 	if (check_arguments(numargs, args) == -1)
 	{

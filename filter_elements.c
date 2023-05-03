@@ -6,7 +6,7 @@
 /*   By: mseara <mseara@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:05:37 by mseara            #+#    #+#             */
-/*   Updated: 2023/04/24 13:05:49 by mseara           ###   ########.fr       */
+/*   Updated: 2023/04/26 11:30:30 by mseara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	ft_filter_elements_number(t_ilist **stacka, t_ilist **stackb)
 	else if (elements <= 5)
 		ft_sort_four_five(stacka, stackb);
 	else if (elements <= 100)
-		ft_sort_big_list(stacka, stackb, 5);
+		ft_sort_big_list(stacka, stackb, 6);
 	else
 		ft_sort_big_list(stacka, stackb, 11);
 }
