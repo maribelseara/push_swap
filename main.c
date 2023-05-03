@@ -5,21 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mseara <mseara@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/10 15:13:20 by mseara            #+#    #+#             */
-/*   Updated: 2023/05/03 11:20:25 by mseara           ###   ########.fr       */
+/*   Created: 2023/05/03 11:39:45 by mseara            #+#    #+#             */
+/*   Updated: 2023/05/03 12:50:53 by mseara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static char	**ft_copy_arguments(int ac, char **argv)
+char	**ft_copy_arguments(int ac, char **argv)
 {
 	int		i;
 	char	**args;
 
 	i = 0;
 	args = malloc(sizeof(char *) * (ac - 1));
-	//Revisar funcion a la que retorna
 	if (!args)
 		return (NULL);
 	while (i < ac - 1)
@@ -30,7 +29,7 @@ static char	**ft_copy_arguments(int ac, char **argv)
 	return (args);
 }
 
-static int	check_arguments(int numargs, char **args)
+int	check_arguments(int numargs, char **args)
 {
 	int	i;
 	int	j;
@@ -56,7 +55,7 @@ static int	check_arguments(int numargs, char **args)
 	return (0);
 }
 
-static t_ilist	*ft_create_stacka(int numargs, char **args)
+t_ilist	*ft_create_stacka(int numargs, char **args)
 {
 	t_ilist			*stacka;
 	t_ilist			*node;
@@ -82,7 +81,7 @@ static t_ilist	*ft_create_stacka(int numargs, char **args)
 	return (stacka);
 }
 
-static void	ft_check_duplicates(t_ilist *stacka)
+void	ft_check_duplicates(t_ilist *stacka)
 {
 	t_ilist	*compare;
 
@@ -102,15 +101,16 @@ static void	ft_check_duplicates(t_ilist *stacka)
 	}
 }
 
-int	main(int ac, char **argv)
+/*int	main(int ac, char **argv)
 {
 	t_ilist	*stacka;
 	t_ilist	*stackb;
 	char	**args;
 	int		numargs;
-	
+
 	if (ac < 2)
 		return (0);
+	
 	if (ac == 2)
 	{
 		numargs = ft_items(argv[1], ' ');
@@ -127,15 +127,12 @@ int	main(int ac, char **argv)
 		numargs = ac - 1;
 		args = ft_copy_arguments(ac, argv);
 		if (!args)
-		{
-			free(args);
-			return(0);
-		}
+			return (0);
 	}
 	if (check_arguments(numargs, args) == -1)
 	{
 		ft_putstr_fd("Error\n", 2);
-		return (-1);
+		return (0);
 	}
 	stacka = ft_create_stacka(numargs, args);
 	ft_free_args(numargs, args);
@@ -144,8 +141,21 @@ int	main(int ac, char **argv)
 	if (numargs == 1)
 		ft_exit(stacka, stackb);
 	ft_filter_elements_number(&stacka, &stackb);
-	//borrar
-	//ft_printlst(stacka);
+	ft_exit(stacka, stackb);
+	return (0);
+}*/
+
+int	main(int ac, char **argv)
+{
+	t_ilist	*stacka;
+	t_ilist	*stackb;
+
+	if (ac < 2)
+		return (0);
+	stackb = NULL;
+	stacka = ft_process_arguments(ac, argv);
+	if (stacka)
+		ft_filter_elements_number(&stacka, &stackb);
 	ft_exit(stacka, stackb);
 	return (0);
 }

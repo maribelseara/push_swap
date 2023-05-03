@@ -50,6 +50,9 @@ void			ft_sort_four_five(t_ilist **stacka, t_ilist **stackb);
 void			ft_sort_big_list(t_ilist **stacka, t_ilist **stackb, int num_chunks);
 int				ft_get_chunk(t_ilist **stacka, int items);
 void			ft_return_lst_element(t_ilist **stackb, int position);
-//borrar
-void	ft_printlst(t_ilist *lst);
+t_ilist			*ft_process_arguments(int ac, char **argv);
+void			ft_check_duplicates(t_ilist *stacka);
+t_ilist			*ft_create_stacka(int numargs, char **args);
+int				check_arguments(int numargs, char **args);
+char			**ft_copy_arguments(int ac, char **argv);
 #endif
