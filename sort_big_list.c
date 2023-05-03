@@ -6,7 +6,7 @@
 /*   By: mseara <mseara@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:28:15 by mseara            #+#    #+#             */
-/*   Updated: 2023/05/03 11:16:40 by mseara           ###   ########.fr       */
+/*   Updated: 2023/05/03 14:36:29 by mseara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,37 +14,37 @@
 
 int	ft_get_max(t_ilist **stackx)
 {
-	int	max;
+	int		max;
 	t_ilist	*tmp;
 
 	tmp = *stackx;
-	max= tmp->content;
-	while(tmp->next)
+	max = tmp->content;
+	while (tmp->next)
 	{
-		tmp=tmp->next;
+		tmp = tmp->next;
 		if (tmp->content > max)
-			max=tmp->content;
+			max = tmp->content;
 	}
-	return max;
+	return (max);
 }
 
 int	ft_get_second_max(t_ilist **stackx, int max)
 {
-	int second_max;
-	t_ilist *tmp;
+	int		second_max;
+	t_ilist	*tmp;
 
 	tmp = *stackx;
-	if (tmp->content!=max)
-		second_max=tmp->content;
+	if (tmp->content != max)
+		second_max = tmp->content;
 	else
-		second_max=tmp->next->content;
+		second_max = tmp->next->content;
 	while (tmp->next)
 	{
-		tmp=tmp->next;
+		tmp = tmp->next;
 		if (second_max < tmp->content && tmp->content != max)
-			second_max=tmp->content;
+			second_max = tmp->content;
 	}
-	return second_max;
+	return (second_max);
 }
 
 void	ft_return_maxs(t_ilist **stacka, t_ilist **stackb,
@@ -57,8 +57,7 @@ int max, int second_max)
 	position = 1;
 	passed = 0;
 	tmp = *stackb;
-	//while (tmp->next)
-	while(tmp)
+	while (tmp)
 	{
 		if (tmp->content == max || tmp->content == second_max)
 		{
@@ -66,7 +65,7 @@ int max, int second_max)
 			ft_push(stackb, stacka, 'a');
 			passed++;
 			if (passed == 2)
-				break;
+				break ;
 			tmp = *stackb;
 			position = 1;
 		}
@@ -80,22 +79,22 @@ int max, int second_max)
 
 void	ft_return_items_to_stacka(t_ilist **stacka, t_ilist **stackb)
 {
-	int max;
-	int second_max;
+	int	max;
+	int	second_max;
 
-	while(ft_count_lst_items(*stackb) > 0)
+	while (ft_count_lst_items(*stackb) > 0)
 	{
-		max=ft_get_max(stackb);
+		max = ft_get_max(stackb);
 		if (ft_count_lst_items(*stackb) == 1)
 		{
-			ft_push(stackb,stacka,'a');
+			ft_push(stackb, stacka, 'a');
 			if ((*stacka)->content > (*stacka)->next->content)
 				ft_swap(stacka, 'a');
-			break;
+			break ;
 		}
-		second_max=ft_get_second_max(stackb, max);
+		second_max = ft_get_second_max(stackb, max);
 		ft_return_maxs(stacka, stackb, max, second_max);
-		if (ft_count_lst_items(*stacka)>=2)
+		if (ft_count_lst_items(*stacka) >= 2)
 		{
 			if ((*stacka)->content > (*stacka)->next->content)
 				ft_swap(stacka, 'a');
@@ -109,7 +108,7 @@ void	ft_sort_big_list(t_ilist **stacka, t_ilist **stackb, int num_chunks)
 	int	chunk_max;
 	int	i;
 	int	j;
-	
+
 	if (ft_is_lst_sorted(stacka))
 		return ;
 	i = 0;
@@ -117,7 +116,7 @@ void	ft_sort_big_list(t_ilist **stacka, t_ilist **stackb, int num_chunks)
 	while (i <= num_chunks)
 	{
 		if (i == num_chunks)
-			items_chunk=ft_count_lst_items(*stacka);
+			items_chunk = ft_count_lst_items(*stacka);
 		chunk_max = ft_get_chunk(stacka, items_chunk);
 		ft_divide_stacks(stacka, stackb, chunk_max, items_chunk);
 		j = 0;
