@@ -6,7 +6,7 @@
 /*   By: mseara <mseara@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:31:13 by mseara            #+#    #+#             */
-/*   Updated: 2023/04/24 13:13:29 by mseara           ###   ########.fr       */
+/*   Updated: 2023/05/11 15:15:14 by mseara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,19 @@ int chunk_max, int to_pass)
 {
 	t_ilist	*tmp;
 	int		position;
+	int		chunk_middle;
 
 	position = 1;
 	tmp = *stacka;
+	chunk_middle = ft_get_middle(stacka, to_pass / 2);
 	while (to_pass > 0)
 	{
 		if ((tmp)->content <= chunk_max)
 		{
 			ft_move_lst_element(stacka, position);
 			ft_push(stacka, stackb, 'b');
+			if ((tmp)->content >= chunk_middle)
+				ft_rotate(stackb, 'b');
 			to_pass--;
 			tmp = (*stacka);
 			position = 1;

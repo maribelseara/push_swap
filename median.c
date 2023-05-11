@@ -6,7 +6,7 @@
 /*   By: mseara <mseara@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:18:30 by mseara            #+#    #+#             */
-/*   Updated: 2023/05/03 11:28:05 by mseara           ###   ########.fr       */
+/*   Updated: 2023/05/11 15:15:30 by mseara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,4 +89,18 @@ int	ft_get_chunk(t_ilist **stacka, int items)
 	chunk_max = sorted[items - 1];
 	free(sorted);
 	return (chunk_max);
+}
+
+int	ft_get_middle(t_ilist **stacka, int position)
+{
+	int	*sorted;
+	int	middle;
+	int	total_items;
+
+	total_items = ft_count_lst_items(*stacka);
+	sorted = ft_get_sorted_array(*stacka, total_items);
+	if (!sorted)
+		return (0);
+	middle = sorted[total_items - position];
+	return (middle);
 }

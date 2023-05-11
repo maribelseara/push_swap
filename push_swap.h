@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mseara <mseara@student.42barcelon>         +#+  +:+       +#+        */
+/*   By: mseara <mseara@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 14:16:57 by mseara            #+#    #+#             */
-/*   Updated: 2023/05/03 14:26:55 by mseara           ###   ########.fr       */
+/*   Updated: 2023/05/11 15:15:23 by mseara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,5 @@ void			ft_check_duplicates(t_ilist *stacka);
 t_ilist			*ft_create_stacka(int numargs, char **args);
 int				check_arguments(int numargs, char **args);
 char			**ft_copy_arguments(int ac, char **argv);
+int				ft_get_middle(t_ilist **stacka, int position);
 #endif

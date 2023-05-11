@@ -6,7 +6,7 @@
 /*   By: mseara <mseara@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:28:15 by mseara            #+#    #+#             */
-/*   Updated: 2023/05/03 14:36:29 by mseara           ###   ########.fr       */
+/*   Updated: 2023/05/11 15:17:05 by mseara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,6 @@ void	ft_sort_big_list(t_ilist **stacka, t_ilist **stackb, int num_chunks)
 	int	items_chunk;
 	int	chunk_max;
 	int	i;
-	int	j;
 
 	if (ft_is_lst_sorted(stacka))
 		return ;
@@ -119,9 +118,6 @@ void	ft_sort_big_list(t_ilist **stacka, t_ilist **stackb, int num_chunks)
 			items_chunk = ft_count_lst_items(*stacka);
 		chunk_max = ft_get_chunk(stacka, items_chunk);
 		ft_divide_stacks(stacka, stackb, chunk_max, items_chunk);
-		j = 0;
-		while (j++ < items_chunk / 2)
-			ft_rotate(stackb, 'b');
 		i++;
 	}
 	ft_return_items_to_stacka(stacka, stackb);
