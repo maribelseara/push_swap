@@ -6,7 +6,7 @@
 /*   By: mseara <mseara@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:18:30 by mseara            #+#    #+#             */
-/*   Updated: 2023/05/11 15:15:30 by mseara           ###   ########.fr       */
+/*   Updated: 2023/05/11 16:16:00 by mseara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,5 +102,6 @@ int	ft_get_middle(t_ilist **stacka, int position)
 	if (!sorted)
 		return (0);
 	middle = sorted[total_items - position];
+	free(sorted);
 	return (middle);
 }
