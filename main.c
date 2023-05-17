@@ -6,7 +6,7 @@
 /*   By: mseara <mseara@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 11:39:45 by mseara            #+#    #+#             */
-/*   Updated: 2023/05/03 12:50:53 by mseara           ###   ########.fr       */
+/*   Updated: 2023/05/17 12:08:47 by mseara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,50 +100,6 @@ void	ft_check_duplicates(t_ilist *stacka)
 		stacka = stacka->next;
 	}
 }
-
-/*int	main(int ac, char **argv)
-{
-	t_ilist	*stacka;
-	t_ilist	*stackb;
-	char	**args;
-	int		numargs;
-
-	if (ac < 2)
-		return (0);
-	
-	if (ac == 2)
-	{
-		numargs = ft_items(argv[1], ' ');
-		if (numargs > 0)
-			args = ft_split(argv[1], ' ');
-		else
-		{
-			ft_putstr_fd("Error\n", 2);
-			return (-1);
-		}
-	}
-	else
-	{
-		numargs = ac - 1;
-		args = ft_copy_arguments(ac, argv);
-		if (!args)
-			return (0);
-	}
-	if (check_arguments(numargs, args) == -1)
-	{
-		ft_putstr_fd("Error\n", 2);
-		return (0);
-	}
-	stacka = ft_create_stacka(numargs, args);
-	ft_free_args(numargs, args);
-	ft_check_duplicates(stacka);
-	stackb = NULL;
-	if (numargs == 1)
-		ft_exit(stacka, stackb);
-	ft_filter_elements_number(&stacka, &stackb);
-	ft_exit(stacka, stackb);
-	return (0);
-}*/
 
 int	main(int ac, char **argv)
 {

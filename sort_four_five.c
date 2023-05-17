@@ -6,13 +6,13 @@
 /*   By: mseara <mseara@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:31:13 by mseara            #+#    #+#             */
-/*   Updated: 2023/05/11 15:15:14 by mseara           ###   ########.fr       */
+/*   Updated: 2023/05/17 12:30:07 by mseara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_move_lst_element(t_ilist **stacka, int position)
+static void	ft_move_lst_element(t_ilist **stacka, int position)
 {
 	if (position <= ft_count_lst_items(*stacka) / 2)
 	{

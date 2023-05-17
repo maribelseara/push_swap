@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mseara <mseara@student.42barcelon>         +#+  +:+       +#+        */
+/*   By: mseara <mseara@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:26:29 by mseara            #+#    #+#             */
-/*   Updated: 2023/03/10 15:26:33 by mseara           ###   ########.fr       */
+/*   Updated: 2023/05/17 12:27:56 by mseara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_rotate_movement(t_ilist **stackx)
+static void	ft_rotate_movement(t_ilist **stackx)
 {
 	t_ilist	*tmp;
 	int		last;

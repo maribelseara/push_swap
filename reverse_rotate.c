@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mseara <mseara@student.42barcelon>         +#+  +:+       +#+        */
+/*   By: mseara <mseara@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:24:22 by mseara            #+#    #+#             */
-/*   Updated: 2023/03/10 15:24:31 by mseara           ###   ########.fr       */
+/*   Updated: 2023/05/17 12:26:36 by mseara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_reverse_rotate_movement(t_ilist **stackx)
+static void	ft_reverse_rotate_movement(t_ilist **stackx)
 {
 	t_ilist	*tmp;
 	int		origin;

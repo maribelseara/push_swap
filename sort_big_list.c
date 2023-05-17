@@ -6,13 +6,13 @@
 /*   By: mseara <mseara@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:28:15 by mseara            #+#    #+#             */
-/*   Updated: 2023/05/11 15:17:05 by mseara           ###   ########.fr       */
+/*   Updated: 2023/05/17 12:29:42 by mseara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_get_max(t_ilist **stackx)
+static int	ft_get_max(t_ilist **stackx)
 {
 	int		max;
 	t_ilist	*tmp;
@@ -28,7 +28,7 @@ int	ft_get_max(t_ilist **stackx)
 	return (max);
 }
 
-int	ft_get_second_max(t_ilist **stackx, int max)
+static int	ft_get_second_max(t_ilist **stackx, int max)
 {
 	int		second_max;
 	t_ilist	*tmp;
@@ -47,7 +47,7 @@ int	ft_get_second_max(t_ilist **stackx, int max)
 	return (second_max);
 }
 
-void	ft_return_maxs(t_ilist **stacka, t_ilist **stackb,
+static void	ft_return_maxs(t_ilist **stacka, t_ilist **stackb,
 int max, int second_max)
 {
 	t_ilist	*tmp;
@@ -77,7 +77,7 @@ int max, int second_max)
 	}
 }
 
-void	ft_return_items_to_stacka(t_ilist **stacka, t_ilist **stackb)
+static void	ft_return_items_to_stacka(t_ilist **stacka, t_ilist **stackb)
 {
 	int	max;
 	int	second_max;

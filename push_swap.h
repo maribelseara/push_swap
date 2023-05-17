@@ -6,7 +6,7 @@
 /*   By: mseara <mseara@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 14:16:57 by mseara            #+#    #+#             */
-/*   Updated: 2023/05/11 15:15:23 by mseara           ###   ########.fr       */
+/*   Updated: 2023/05/17 12:25:01 by mseara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ typedef struct s_ilist
 	struct s_ilist	*next;
 }	t_ilist;
 
-void			ft_free_stack(t_ilist **stackx);
 long long int	ft_atol(const char *str);
 void			ft_exit(t_ilist *stacka, t_ilist *stackb);
 void			ft_exit(t_ilist *stacka, t_ilist *stackb);

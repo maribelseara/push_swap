@@ -6,7 +6,7 @@
 /*   By: mseara <mseara@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:06:48 by mseara            #+#    #+#             */
-/*   Updated: 2023/04/19 11:33:51 by mseara           ###   ########.fr       */
+/*   Updated: 2023/05/17 12:25:20 by mseara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_free_args(int numargs, char **args)
 	free(args);
 }
 
-void	ft_free_stack(t_ilist **stackx)
+static void	ft_free_stack(t_ilist **stackx)
 {
 	t_ilist	*nextnode;
 
