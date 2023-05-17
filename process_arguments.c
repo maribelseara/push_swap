@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   process_arguments.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mseara <mseara@student.42barcelon>         +#+  +:+       +#+        */
+/*   By: mseara <mseara@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 14:10:37 by mseara            #+#    #+#             */
-/*   Updated: 2023/05/03 14:10:49 by mseara           ###   ########.fr       */
+/*   Updated: 2023/05/17 12:36:55 by mseara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ t_ilist	*ft_process_arguments(int ac, char **argv)
 	args = ft_get_args(ac, argv, &numargs);
 	if (!args)
 		return (NULL);
-	if (check_arguments(numargs, args) == -1)
+	if (ft_check_arguments(numargs, args) == -1)
 	{
 		ft_putstr_fd("Error\n", 2);
 		return (NULL);

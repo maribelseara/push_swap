@@ -6,7 +6,7 @@
 /*   By: mseara <mseara@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 11:39:45 by mseara            #+#    #+#             */
-/*   Updated: 2023/05/17 12:08:47 by mseara           ###   ########.fr       */
+/*   Updated: 2023/05/17 12:36:45 by mseara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	**ft_copy_arguments(int ac, char **argv)
 	return (args);
 }
 
-int	check_arguments(int numargs, char **args)
+int	ft_check_arguments(int numargs, char **args)
 {
 	int	i;
 	int	j;

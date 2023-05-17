@@ -6,7 +6,7 @@
 /*   By: mseara <mseara@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 14:16:57 by mseara            #+#    #+#             */
-/*   Updated: 2023/05/17 12:25:01 by mseara           ###   ########.fr       */
+/*   Updated: 2023/05/17 12:37:03 by mseara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ typedef struct s_ilist
 }	t_ilist;
 
 long long int	ft_atol(const char *str);
-void			ft_exit(t_ilist *stacka, t_ilist *stackb);
 void			ft_exit(t_ilist *stacka, t_ilist *stackb);
 t_ilist			*ft_ilstnew(int content);
 void			ft_ilstadd_back(t_ilist **lst, t_ilist *new);
@@ -53,7 +52,7 @@ void			ft_return_lst_element(t_ilist **stackb, int position);
 t_ilist			*ft_process_arguments(int ac, char **argv);
 void			ft_check_duplicates(t_ilist *stacka);
 t_ilist			*ft_create_stacka(int numargs, char **args);
-int				check_arguments(int numargs, char **args);
+int				ft_check_arguments(int numargs, char **args);
 char			**ft_copy_arguments(int ac, char **argv);
 int				ft_get_middle(t_ilist **stacka, int position);
 #endif
