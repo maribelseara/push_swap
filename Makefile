@@ -24,8 +24,9 @@ $(NAME) : $(OBJS)
 
 clean : 
 	rm -rf $(OBJ_DIR)
+	@make clean -C libft
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) $(LIBRARY)
 
 re: fclean all
